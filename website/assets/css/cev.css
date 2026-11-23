@@ -693,3 +693,16 @@ dialog.res[open]{animation:resauf .5s var(--e1)}
   .js .pk1__wand .bild{transform:translate3d(0,24px,0);transition-duration:.75s}
   [data-schlitz] .zi{transition-duration:.7s}
 }
+/* Fenster ohne overflow:hidden (der Ausschnitt kommt aus clip-path), der Schatten hinter dem Satz bleibt im Bild */
+.fenster{overflow:visible}
+.fenster__satz::before{inset:-28% min(-22%, 0px)}
+@media (max-width:860px){.fenster__satz::before{inset:-24% -4%}}
+/* Prüfpunkte 23.11.2026: Zitat-Tafel füllt ihre Höhe, Plates-Kopf am Handy ohne Einflug über der Bildwand, Fenster am Handy kürzer */
+.ct-stimme{justify-content:space-between;font-size:clamp(28px,2.5vw,40px)!important}
+@media (max-width:860px){
+  .js .pk1__tafel[data-r],.pk1__tafel [data-schlitz] .zi{transform:none!important;transition:none!important}
+  .fenster{height:72vh;min-height:440px}
+}
+@media (max-width:860px){.js .pk1__wand .bild{transform:none!important;transition:none!important}}
+@media (max-width:860px){.sv.ct-salamat{padding-top:48px}}
+@media (max-width:900px){.pk1__wand{grid-template-rows:repeat(2,minmax(0,1fr))}.pk1__wand .bild:nth-child(n+5){display:none}}
