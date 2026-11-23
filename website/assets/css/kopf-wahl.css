@@ -1,0 +1,134 @@
+/* CEV · 15 Kopf-Fassungen der Gerichte-Seite (Wahlseite kopf-wahl.html, Robert 22.11.2026) */
+.pk{position:relative;padding:clamp(120px,14vh,160px) var(--rand) clamp(70px,8vw,110px);background:var(--creme);overflow:clip}
+.pk-t{font-size:clamp(76px,9.6vw,156px);margin-bottom:24px}
+.pk-s{font-size:clamp(18px,1.5vw,21px);line-height:1.55;max-width:34em;margin-bottom:28px}
+.pk .bild img{position:absolute;inset:0}
+
+/* 1 Vollbild mit Tafel */
+.pk1{min-height:100vh;display:flex;align-items:flex-end;padding-bottom:clamp(40px,5vw,70px)}
+.pk1__bild{position:absolute!important;inset:0;border-radius:0}
+.pk1__tafel{position:relative;max-width:640px;background:var(--papier);border-radius:28px;padding:clamp(28px,3.4vw,52px);box-shadow:0 40px 60px -30px rgba(0,0,0,.55)}
+
+/* 2 Drei Teller */
+.pk2__kopf{max-width:var(--max);margin:0 auto clamp(30px,3.4vw,50px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0 clamp(28px,5vw,80px);align-items:end}
+.pk2__kopf .pk-t{grid-row:1/3}
+.pk2__teller{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
+.pk2__teller .bild{aspect-ratio:1/1;border-radius:22px}
+
+/* 3 Bildband */
+.pk3__kopf{max-width:980px;margin:0 auto clamp(34px,3.6vw,54px);text-align:center}
+.pk3__kopf .pk-s{margin-left:auto;margin-right:auto}
+.pk3__band{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,1vw,14px);margin:0 calc(-1 * var(--rand));padding:0 var(--rand)}
+.pk3__band .bild{aspect-ratio:3/4;border-radius:18px}
+
+/* 4 Halb und halb */
+.pk4{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding:0;min-height:100vh}
+.pk4__text{background:var(--rot);color:#fff;padding:clamp(130px,16vh,180px) clamp(24px,5vw,80px) clamp(50px,6vw,90px);display:flex;flex-direction:column;justify-content:center}
+.pk4__text .pk-t .rot{color:var(--tinte)}
+.pk4__bild{border-radius:0;min-height:520px}
+
+/* 5 Bild im Titel */
+.pk5{text-align:center;padding-top:clamp(110px,13vh,150px)}
+.pk5__wort{line-height:.84}
+.pk5__wort span{display:block}
+.pk5__wort span:first-child{font-size:clamp(60px,7vw,120px);color:var(--tinte)}
+.pk5__bildschrift{font-size:clamp(130px,25vw,420px);font-stretch:85%;color:transparent;background:url(../img/fenster-teller.webp) center 40%/cover;-webkit-background-clip:text;background-clip:text}
+.pk5__fuss{max-width:900px;margin:clamp(20px,2.4vw,36px) auto 0}
+.pk5__fuss .pk-s{margin-left:auto;margin-right:auto}
+
+/* 6 Menükarte */
+.pk6{min-height:100vh;display:grid;place-items:center}
+.pk6__bild{position:absolute!important;inset:0;border-radius:0}
+.pk6__karte{position:relative;width:min(720px,100%);background:var(--papier);border-radius:28px;padding:clamp(30px,3.6vw,56px);text-align:center;box-shadow:0 40px 60px -30px rgba(0,0,0,.6)}
+.pk6__karte .pk-s{margin-left:auto;margin-right:auto}
+.pk6__karte ul{list-style:none;margin:0 0 28px;padding:0;text-align:left}
+.pk6__karte li a{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid var(--linie);text-decoration:none}
+.pk6__karte li b{font-family:var(--titel);font-weight:700;font-stretch:85%;text-transform:uppercase;font-size:24px}
+.pk6__karte li span{font-size:14px;color:var(--grau)}
+
+/* 7 Tellerrand */
+.pk7{background:#1D3A6B;color:#fff}
+.pk7::before,.pk7::after{content:"";position:absolute;left:0;right:0;height:26px;background:var(--zack,none) repeat-x;background-size:52px 26px}
+.pk7::before{top:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='26' viewBox='0 0 52 26'%3E%3Cpath d='M0 0h52v4L39 22 26 4 13 22 0 4z' fill='%23F3EADC'/%3E%3C/svg%3E")}
+.pk7::after{bottom:0;transform:scaleY(-1);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='26' viewBox='0 0 52 26'%3E%3Cpath d='M0 0h52v4L39 22 26 4 13 22 0 4z' fill='%23FBF6EE'/%3E%3C/svg%3E")}
+.pk7__in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.pk7 .pk-t .rot{color:var(--aqua)}
+.pk7__bild{aspect-ratio:4/5;border-radius:26px}
+
+/* 8 Laufband */
+.pk8{padding-bottom:0}
+.pk8__in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.pk8__bild{aspect-ratio:6/5;border-radius:26px}
+.pk8__band{margin:clamp(50px,5vw,80px) calc(-1 * var(--rand)) 0;background:var(--teal-tief);color:var(--papier);overflow:hidden;padding:20px 0}
+.pk8__lauf{display:flex;align-items:center;gap:30px;width:max-content;animation:lauf 42s linear infinite}
+.pk8__lauf span{font-family:var(--titel);font-weight:800;font-stretch:80%;text-transform:uppercase;font-size:clamp(28px,3vw,46px);line-height:1;white-space:nowrap}
+.pk8__lauf i{font-style:normal;color:var(--aqua)}
+
+/* 9 Rot gespiegelt */
+.pk9{background:var(--rot);color:#fff}
+.pk9__in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.pk9 .pk-t .rot{color:var(--tinte)}
+.pk9__bild{aspect-ratio:4/5;border-radius:26px}
+
+/* 10 Fenster */
+.pk10{min-height:100vh;clip-path:inset(0);display:grid;place-items:center;background:none}
+.pk10__bild{position:fixed;inset:0;z-index:-1}
+.pk10__bild img{width:100%;height:100%;object-fit:cover}
+.pk10__tafel{position:relative;max-width:820px;text-align:center;background:rgba(8,40,43,.88);color:#fff;border-radius:28px;padding:clamp(30px,4vw,60px)}
+.pk10__tafel .pk-s{margin-left:auto;margin-right:auto}
+.pk10__tafel .pk-t .rot{color:var(--aqua)}
+
+/* 11 Teal-Bühne */
+.pk11{background:var(--teal-tief);color:var(--papier)}
+.pk11__in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(14px,2vw,30px);align-items:stretch}
+.pk11__a,.pk11__b{min-height:clamp(420px,40vw,600px);border-radius:24px}
+.pk11__text{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:10px}
+.pk11__text .pk-t .rot{color:var(--aqua)}
+
+/* 12 Wegweiser */
+.pk12__in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.pk12__karten{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.4vw,18px)}
+.pk12__k{display:flex;flex-direction:column;justify-content:flex-end;gap:8px;min-height:clamp(170px,15vw,230px);padding:24px;border-radius:24px;text-decoration:none;box-shadow:0 26px 36px -28px rgba(34,27,22,.6);transition:transform 2.8s var(--e2)}
+.pk12__k:hover{transform:translateY(-4px);transition-duration:2.2s}
+.pk12__k b{font-family:var(--titel);font-weight:800;font-stretch:80%;text-transform:uppercase;font-size:clamp(28px,2.8vw,44px);line-height:1}
+.pk12__k span{font-size:15px}
+.pk12__k--0{background:var(--rot);color:#fff}.pk12__k--1{background:var(--teal-tief);color:var(--papier)}.pk12__k--2{background:var(--aqua);color:var(--teal-tief)}.pk12__k--3{background:var(--papier);color:var(--tinte);box-shadow:inset 0 0 0 1px var(--linie)}
+
+/* 13 Handschrift */
+.pk13__kopf{max-width:var(--max);margin:0 auto clamp(26px,3vw,44px);display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+.pk13__kopf .pk-t{margin:0}
+.pk13__buehne{position:relative;max-width:var(--max);margin:0 auto}
+.pk13__bild{aspect-ratio:21/9;border-radius:26px}
+.pk13__notiz{position:absolute;right:clamp(16px,3vw,48px);bottom:clamp(16px,3vw,48px);max-width:420px;background:var(--weiss);border-radius:8px;padding:26px 30px;box-shadow:0 30px 44px -26px rgba(0,0,0,.6)}
+.pk13__notiz p{font:700 clamp(28px,2.6vw,40px)/1.1 "Caveat",cursive;color:var(--rot);margin-bottom:10px}
+.pk13__notiz span{font:500 22px/1.3 "Caveat",cursive;color:var(--tinte)}
+
+/* 14 Panorama */
+.pk14{padding-top:clamp(100px,12vh,130px)}
+.pk14__bild{max-width:var(--max);margin:0 auto!important;aspect-ratio:21/9;border-radius:26px}
+.pk14__text{max-width:var(--max);margin:clamp(26px,3vw,44px) auto 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:end}
+.pk14__text .pk-t{margin:0}
+
+/* 15 Zitat */
+.pk15__in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.pk15__z{margin:0 0 30px;padding:26px 28px;border-radius:22px;background:var(--teal-tief);color:var(--papier);font-family:var(--titel);font-weight:700;font-stretch:80%;text-transform:uppercase;font-size:clamp(22px,2.2vw,34px);line-height:1.1}
+.pk15__z cite{display:block;margin-top:14px;font:400 14px/1.4 var(--sans);text-transform:none;color:rgba(251,246,238,.75)}
+.pk15__bild{aspect-ratio:4/5;border-radius:26px}
+
+@media (max-width:900px){
+  .pk2__kopf,.pk4,.pk7__in,.pk8__in,.pk9__in,.pk11__in,.pk12__in,.pk14__text,.pk15__in{grid-template-columns:minmax(0,1fr)}
+  .pk2__kopf .pk-t{grid-row:auto}
+  .pk2__teller{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .pk3__band{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pk4{min-height:0}.pk4__bild{min-height:0;aspect-ratio:4/3}
+  .pk11__a,.pk11__b{min-height:0;aspect-ratio:3/4}
+  .pk11__in{grid-template-columns:repeat(2,minmax(0,1fr))}.pk11__text{grid-column:1/-1;order:-1}
+  .pk13__kopf{flex-direction:column;align-items:flex-start}
+  .pk13__bild{aspect-ratio:4/5}
+  .pk14__bild{aspect-ratio:4/3}
+}
+@media (prefers-reduced-motion:reduce){.pk8__lauf{animation:none}}
+.pk .knopf{width:max-content}
+.pk14__bild{aspect-ratio:3/1}
+.pk14 .pk-t{font-size:clamp(70px,8vw,130px)}
+@media (max-width:900px){.pk14__bild{aspect-ratio:4/3}}

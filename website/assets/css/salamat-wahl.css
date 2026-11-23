@@ -1,0 +1,147 @@
+/* CEV · 15 Fassungen Salamat (Wahlseite salamat-wahl.html, Robert 22.11.2026) */
+.sv{overflow:clip}
+.sv-mitte{text-align:center}
+.sv-zentriert{text-align:center}
+.sv h2.titel-l{font-size:clamp(64px,9vw,150px);margin-bottom:18px}
+.sv-satz{font-size:clamp(19px,1.7vw,24px);line-height:1.5;margin:0 auto clamp(30px,3.4vw,50px);max-width:40em}
+.sv-knopf{margin-top:clamp(30px,3.4vw,48px)}
+.sv ul,.sv ol{list-style:none;margin:0;padding:0}
+
+/* 1 Doppel-Laufband */
+.sv1__band{overflow:hidden;padding:16px 0;margin:0 calc(-1 * var(--rand));background:var(--papier);color:var(--tinte)}
+.sv1__band--zur{background:var(--teal-tief);color:var(--papier);margin-top:10px}
+.sv1__lauf{display:flex;align-items:center;gap:30px;width:max-content;animation:lauf 50s linear infinite}
+.sv1__band--zur .sv1__lauf{animation-direction:reverse;animation-duration:34s}
+.sv1__lauf span{font-family:var(--titel);font-weight:800;font-stretch:80%;text-transform:uppercase;font-size:clamp(34px,4vw,64px);line-height:1;white-space:nowrap}
+.sv1__lauf i{font-style:normal;color:var(--rot);font-size:20px}
+
+/* 2 Speisekarte */
+.sv2__karte{max-width:1080px;margin:0 auto;background:var(--papier);color:var(--tinte);border-radius:28px;padding:clamp(34px,4vw,70px);text-align:center;box-shadow:0 34px 44px -30px rgba(0,0,0,.5)}
+.sv2__karte h2.titel-l{color:var(--rot)}
+.sv2__spalten{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(28px,4vw,70px);text-align:left}
+.sv2__spalten li{display:flex;align-items:baseline;gap:10px;padding:13px 0;border-bottom:1px solid var(--linie)}
+.sv2__spalten b{font-family:var(--titel);font-weight:700;font-stretch:85%;text-transform:uppercase;font-size:clamp(20px,1.8vw,26px)}
+.sv2__spalten i{flex:1;border-bottom:2px dotted rgba(34,27,22,.3);transform:translateY(-4px)}
+.sv2__spalten span{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
+
+/* 3 Grosse Liste */
+.sv3__liste li{display:flex;align-items:baseline;justify-content:center;gap:14px;padding:6px 0;border-bottom:1px solid rgba(85,227,218,.16)}
+.sv3__n{font-family:var(--titel);font-weight:800;font-stretch:80%;text-transform:uppercase;font-size:clamp(34px,4.4vw,72px);line-height:1}
+.sv3__liste li:nth-child(3n+2) .sv3__n{color:var(--aqua)}
+.sv3__liste li:nth-child(3n) .sv3__n{color:var(--rot)}
+.sv3__liste small{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(251,246,238,.6)}
+
+/* 4 Foto und Liste */
+.sv4__in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:stretch}
+.sv4__bild{min-height:560px;border-radius:24px}
+.sv4__bild img{position:absolute;inset:0}
+.sv4__text h2.titel-l{margin-bottom:12px}
+.sv4__text .sv-satz{margin-left:0}
+.sv4__liste{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;margin-bottom:30px}
+.sv4__liste li{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.3)}
+.sv4__liste b{font-family:var(--titel);font-weight:700;font-stretch:85%;text-transform:uppercase;font-size:20px}
+.sv4__liste span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+
+/* 5 Rahmen */
+.sv5 h2.titel-l{color:var(--rot)}
+.sv5__wand{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:clamp(10px,1.2vw,18px)}
+.sv5__r{padding:6px;border-radius:3px;background:#2A211B;box-shadow:0 22px 30px -22px rgba(34,27,22,.7)}
+.sv5__m{height:100%;min-height:140px;background:var(--weiss);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:14px 8px}
+.sv5__m b{font-family:var(--titel);font-weight:800;font-stretch:80%;text-transform:uppercase;color:var(--rot);font-size:clamp(17px,1.5vw,24px);line-height:1}
+.sv5__m span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grau)}
+
+/* 6 Fliesstext */
+.sv6__text{max-width:1180px;margin:0 auto;font-family:var(--titel);font-weight:800;font-stretch:80%;text-transform:uppercase;font-size:clamp(34px,4.6vw,76px);line-height:1.12}
+.sv6__text i{font-style:normal;color:var(--teal-tief);font-size:.5em;vertical-align:middle}
+.sv6__text span:nth-of-type(2n){color:var(--papier)}
+.sv6__text span:nth-of-type(2n+1){color:#fff}
+
+/* 7 Abspann */
+.sv7__gruppe{margin:0 auto clamp(26px,3vw,40px);max-width:700px}
+.sv7__gruppe h3{font-size:14px;letter-spacing:.2em;color:var(--aqua);margin-bottom:12px;font-family:var(--sans);font-weight:500}
+.sv7__gruppe p{font-family:var(--titel);font-weight:700;font-stretch:85%;text-transform:uppercase;font-size:clamp(26px,2.6vw,40px);line-height:1.2}
+
+/* 8 Zwei Tafeln */
+.sv8__tafel{background:var(--papier);color:var(--tinte);border-radius:26px;padding:clamp(26px,3vw,46px);margin-bottom:clamp(14px,1.6vw,22px);text-align:center}
+.sv8__tafel--teal{background:var(--teal-tief);color:var(--papier)}
+.sv8__tafel h3{font-size:15px;letter-spacing:.18em;margin-bottom:20px;font-family:var(--sans);font-weight:500;color:var(--rot)}
+.sv8__tafel--teal h3{color:var(--aqua)}
+.sv8__k{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.sv8__p{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.sv8__tafel li{font-family:var(--titel);font-weight:800;font-stretch:80%;text-transform:uppercase;font-size:clamp(22px,2.2vw,34px);padding:14px 6px;border-radius:14px;background:rgba(127,127,127,.08)}
+
+/* 9 Grosses Wort */
+.sv9__in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,4vw,70px);align-items:center}
+.sv9__wort{font-size:clamp(110px,15vw,260px);line-height:.82;color:var(--rot)}
+.sv9__in .sv-satz{margin-left:0}
+.sv9__liste{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;margin-bottom:30px}
+.sv9__liste li{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid rgba(85,227,218,.2)}
+.sv9__liste b{font-family:var(--titel);font-weight:700;font-stretch:85%;text-transform:uppercase;font-size:20px}
+.sv9__liste span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--aqua)}
+
+/* 10 Fenster */
+.sv10{position:relative;clip-path:inset(0);overflow:hidden;margin-top:calc(-1 * var(--ecke));color:#fff;text-align:center;padding:clamp(120px,14vh,180px) var(--rand)}
+.sv10__bild{position:fixed;inset:0;z-index:-1}
+.sv10__bild img{width:100%;height:100%;object-fit:cover}
+.sv10__inhalt{position:relative;max-width:900px;margin:0 auto;padding:clamp(30px,4vw,60px);border-radius:28px;background:rgba(8,40,43,.86)}
+.sv10 ul{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px}
+.sv10 li{font-family:var(--titel);font-weight:700;font-stretch:85%;text-transform:uppercase;font-size:clamp(22px,2.2vw,32px)}
+
+/* 11 Zeitleiste */
+.sv11__linie{position:relative;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;padding-top:34px}
+.sv11__linie::before{content:"";position:absolute;left:4%;right:4%;top:12px;height:3px;background:rgba(255,255,255,.6);border-radius:3px}
+.sv11__linie li{position:relative;background:var(--papier);color:var(--tinte);border-radius:18px;padding:22px 10px;min-height:150px;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.sv11__linie li::before{content:"";position:absolute;left:50%;top:-29px;width:14px;height:14px;margin-left:-7px;border-radius:4px;background:#fff;transform:rotate(45deg)}
+.sv11__linie span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--rot)}
+.sv11__linie b{font-family:var(--titel);font-weight:800;font-stretch:80%;text-transform:uppercase;font-size:clamp(18px,1.6vw,24px);line-height:1.05}
+.sv11__auch{margin-top:26px;font-size:16px}
+
+/* 12 Routen */
+.sv12__karte{position:relative;max-width:1100px;margin:0 auto;background:var(--teal);border-radius:28px;padding:clamp(16px,2vw,30px)}
+.sv12__karte svg{width:100%;height:auto;display:block}
+.sv12__karte .strich{fill:none;stroke:var(--aqua);stroke-width:3;stroke-dasharray:1;stroke-dashoffset:1;stroke-linecap:round;transition:stroke-dashoffset 2s var(--e2) .3s}
+.sv12__karte.da .strich{stroke-dashoffset:0}
+.sv12__karte circle{fill:var(--rot);stroke:var(--papier);stroke-width:3}
+.sv12__stadt{font:700 30px/1 "Caveat",cursive;fill:var(--aqua)}
+.sv12__n{font:800 22px/1 var(--titel);font-stretch:80%;text-transform:uppercase;fill:var(--papier)}
+.sv12__karte figcaption{position:absolute;right:24px;bottom:14px;font:400 18px/1 "Caveat",cursive;color:rgba(251,246,238,.7)}
+
+/* 13 Brief */
+.sv13__brief{max-width:860px;margin:0 auto;background:var(--weiss);border-radius:8px;padding:clamp(34px,4.4vw,70px);box-shadow:0 30px 44px -30px rgba(34,27,22,.6),0 0 0 1px var(--linie)}
+.sv13__gruss{font:700 clamp(46px,5.4vw,84px)/1 "Caveat",cursive;color:var(--rot);margin-bottom:22px}
+.sv13__text{font:500 clamp(26px,2.4vw,34px)/1.35 "Caveat",cursive;color:var(--tinte)}
+.sv13__von{margin-top:22px;font:700 30px/1 "Caveat",cursive;color:var(--teal-hell);text-align:right}
+
+/* 14 Zähler */
+.sv14__in{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(28px,4vw,70px);align-items:center}
+.sv14__zahl{background:var(--papier);color:var(--rot);border-radius:28px;padding:clamp(30px,3.4vw,52px);text-align:center;box-shadow:0 34px 44px -30px rgba(0,0,0,.5)}
+.sv14__zahl b{display:block;font-family:var(--titel);font-weight:800;font-stretch:85%;font-size:clamp(130px,16vw,260px);line-height:.85}
+.sv14__zahl span{font-size:16px;color:var(--tinte)}
+.sv14__in h2.titel-l{margin-bottom:10px}
+.sv14__in .sv-satz{margin-left:0}
+.sv14__liste{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;margin-bottom:30px}
+.sv14__liste li{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.3)}
+.sv14__liste b{font-family:var(--titel);font-weight:700;font-stretch:85%;text-transform:uppercase;font-size:20px}
+.sv14__liste span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+
+/* 15 Schachbrett */
+.sv15__raster{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:clamp(8px,1vw,14px)}
+.sv15__raster .bild{aspect-ratio:1/1;border-radius:16px}
+.sv15__n{aspect-ratio:1/1;border-radius:16px;background:var(--papier);color:var(--tinte);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:8px}
+.sv15__n:nth-child(4n){background:var(--teal-tief);color:var(--papier)}
+.sv15__n b{font-family:var(--titel);font-weight:800;font-stretch:80%;text-transform:uppercase;font-size:clamp(15px,1.4vw,22px);line-height:1}
+.sv15__n span{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+
+@media (max-width:900px){
+  .sv2__spalten,.sv4__in,.sv9__in,.sv14__in{grid-template-columns:minmax(0,1fr)}
+  .sv4__bild{min-height:0;aspect-ratio:4/3}
+  .sv5__wand,.sv11__linie{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sv11__linie::before{display:none}.sv11__linie li::before{display:none}
+  .sv8__k{grid-template-columns:repeat(2,minmax(0,1fr))}.sv8__p{grid-template-columns:minmax(0,1fr)}
+  .sv15__raster{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sv4__liste,.sv9__liste,.sv14__liste{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){.sv1__lauf{animation:none}}
+.sv8__k,.sv8__p{display:flex!important;flex-wrap:wrap;justify-content:center;gap:6px 26px}
+.sv8__tafel li{background:none;padding:4px 0}
+@media (max-width:900px){.sv11__linie{grid-template-columns:minmax(0,1fr)}}

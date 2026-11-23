@@ -1,0 +1,209 @@
+/* CEV · 10 Fussfassungen (Wahlseite fuss-wahl.html, Robert 22.11.2026) */
+.fv{position:relative;border-radius:var(--ecke) var(--ecke) 0 0;margin-top:calc(-1 * var(--ecke));padding:clamp(56px,6vw,96px) var(--rand) 30px;overflow:hidden}
+.fv h3{font-family:var(--titel);font-weight:700;font-stretch:90%;text-transform:uppercase;letter-spacing:.04em;font-size:17px;line-height:1.1;margin-bottom:12px}
+.fv p,.fv a{font-size:16px;line-height:1.7}
+.fv a{text-decoration:none;border-bottom:1px solid currentColor;border-bottom-color:rgba(127,127,127,.4)}
+.fv a.knopf{border:0}
+.fv img{height:auto}
+.fv__studie{max-width:var(--max);margin:clamp(40px,4vw,60px) auto 0;padding-top:18px;border-top:1px solid rgba(127,127,127,.25);display:flex;justify-content:space-between;gap:20px;font-size:12.5px;opacity:.7}
+.fv [data-r]{transition-duration:1.1s}
+
+/* 1 Wand: drei Rahmen wie im Auftakt */
+.fv1{background:var(--creme);color:var(--tinte)}
+.fv1__in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,36px)}
+.fv1__r{padding:clamp(7px,.8vw,12px);border-radius:4px;background:#2A211B;box-shadow:0 30px 40px -28px rgba(34,27,22,.7)}
+.fv1__m{height:100%;background:var(--weiss);padding:clamp(22px,2.4vw,34px) 18px 30px;text-align:center}
+.fv1__m b{display:block;font-family:var(--titel);font-weight:800;font-size:clamp(80px,9vw,140px);line-height:.85;color:var(--rot);margin-bottom:18px}
+
+/* 2 Schild: riesige Buchstaben, unten angeschnitten */
+.fv2{background:var(--teal-tief);color:var(--papier);padding-bottom:30px}
+.fv2__zeile{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:28px;align-items:start}
+.fv2__knopf{align-self:center}
+.fv2__wort{max-width:var(--max);margin:clamp(30px,3vw,50px) auto -6px;display:flex;justify-content:space-between;overflow:hidden;height:clamp(150px,22vw,330px)}
+.fv2__wort span{font-family:var(--titel);font-weight:800;font-stretch:100%;font-size:clamp(200px,30vw,460px);line-height:.8;color:var(--rot);transform:translateY(40%);transition:transform 1.3s var(--e1)}
+.fv2__wort span:nth-child(2){transition-delay:.1s}.fv2__wort span:nth-child(3){transition-delay:.2s}
+[data-fw]:not([hidden]) .fv2__wort span{transform:translateY(8%)}
+.fv2 .fv__studie{margin-top:0}
+
+/* 3 Fisch: Logo in der Mitte auf Rot */
+.fv3{background:var(--rot);color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28' viewBox='0 0 56 28'%3E%3Cpath d='M0 22 14 8l14 14L42 8l14 14' fill='none' stroke='%23FFFFFF' stroke-width='2' opacity='.1'/%3E%3C/svg%3E");background-size:56px 28px}
+.fv3__in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) minmax(0,1fr);gap:28px;align-items:center}
+.fv3__seite{text-align:center}
+.fv3__logo{background:var(--papier);border-radius:28px;padding:clamp(26px,3vw,44px);text-align:center;box-shadow:0 30px 40px -28px rgba(0,0,0,.45)}
+.fv3__logo img{width:min(100%,340px);margin:0 auto}
+.fv3__logo p{margin-top:14px;font-family:var(--titel);font-weight:700;font-stretch:80%;text-transform:uppercase;font-size:22px;color:var(--tinte)}
+.fv3__kontakt{max-width:var(--max);margin:clamp(30px,3vw,46px) auto 0;display:flex;justify-content:center;flex-wrap:wrap;gap:10px 18px}
+
+/* 4 Reservieren: grosse Karte in der Mitte */
+.fv4{background:var(--teal);color:var(--papier)}
+.fv4__in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:center}
+.fv4__seite{text-align:center}
+.fv4__karte{background:var(--papier);color:var(--tinte);border-radius:28px;padding:clamp(30px,3.4vw,52px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;box-shadow:0 34px 44px -30px rgba(0,0,0,.55)}
+.fv4__karte h2{font-size:clamp(46px,5vw,82px)}
+.fv4__tel{font-family:var(--titel);font-weight:700;font-stretch:85%;font-size:clamp(28px,2.6vw,40px)!important;border:0!important;color:var(--rot)}
+
+/* 5 Breeze Blocks: Tafel auf der Terrassenwand */
+.fv5{color:var(--tinte);padding-bottom:0}
+.fv5__tafel{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) repeat(3,minmax(0,1fr));gap:28px;align-items:center;background:var(--papier);border-radius:26px;padding:clamp(28px,3.2vw,50px);box-shadow:0 30px 40px -32px rgba(34,27,22,.5)}
+.fv5__logo img{width:min(100%,220px)}
+.fv5__band{margin:clamp(36px,4vw,56px) calc(-1 * var(--rand)) 0;background:var(--rot);color:#fff;padding:2px var(--rand) 22px}
+.fv5__band .fv__studie{border-top:0;opacity:.9}
+
+/* 6 Zickzack: Tellerrand als Kante, Blau der Teller */
+.fv6{background:#1D3A6B;color:#fff;padding-top:clamp(80px,8vw,120px)}
+.fv6::before{content:"";position:absolute;left:0;right:0;top:0;height:26px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='26' viewBox='0 0 52 26'%3E%3Cpath d='M0 0h52v4L39 22 26 4 13 22 0 4z' fill='%23FBF6EE'/%3E%3C/svg%3E") repeat-x;background-size:52px 26px}
+.fv6__in{max-width:var(--max);margin:0 auto}
+.fv6__titel{font-size:clamp(44px,5.6vw,90px);margin-bottom:clamp(30px,3.4vw,50px)}
+.fv6__titel .rot{color:var(--aqua)}
+.fv6__spalten{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,.2)}
+
+/* 7 Handschrift: drei Zettel in Caveat */
+.fv7{background:var(--papier);color:var(--tinte)}
+.fv7__in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,36px)}
+.fv7__notiz{background:var(--weiss);border-radius:6px;padding:28px 30px 32px;box-shadow:0 22px 30px -24px rgba(34,27,22,.55),0 0 0 1px var(--linie)}
+
+
+.fv7 h3{font:700 34px/1 "Caveat",cursive;text-transform:none;letter-spacing:0;color:var(--rot);margin-bottom:10px}
+.fv7 p,.fv7 p a{font:500 23px/1.35 "Caveat",cursive}
+.fv7__logo{text-align:center;margin-top:clamp(30px,3vw,46px)}
+.fv7__logo img{width:150px;margin:0 auto}
+
+/* 8 Laufband: Zeiten und Ort laufen durch */
+.fv8{background:var(--teal-tief);color:var(--papier);padding-top:0}
+.fv8__band{margin:0 calc(-1 * var(--rand)) clamp(40px,4vw,60px);overflow:hidden;background:var(--aqua);color:var(--teal-tief);padding:18px 0}
+.fv8__lauf{display:flex;align-items:center;gap:30px;width:max-content;animation:lauf 40s linear infinite}
+.fv8__lauf span{font-family:var(--titel);font-weight:800;font-stretch:80%;text-transform:uppercase;font-size:clamp(26px,2.6vw,40px);line-height:1;white-space:nowrap}
+.fv8__lauf i{font-style:normal;font-size:18px}
+.fv8__in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) auto;gap:28px;align-items:center}
+.fv8__logo img{width:min(100%,200px)}
+
+/* 9 Wochenplan: sieben Tage, Sonntag zu */
+.fv9{background:var(--creme);color:var(--tinte)}
+.fv9__in{max-width:var(--max);margin:0 auto}
+.fv9__titel{font-size:clamp(40px,5vw,80px);margin-bottom:clamp(28px,3vw,46px);text-align:center}
+.fv9__woche{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:clamp(6px,1vw,14px)}
+.fv9__tag{display:flex;flex-direction:column;align-items:center;gap:6px;padding:clamp(16px,2vw,28px) 6px;border-radius:18px;background:var(--rot);color:#fff;box-shadow:0 20px 28px -22px rgba(184,51,42,.9)}
+.fv9__tag b{font-family:var(--titel);font-weight:800;font-stretch:85%;text-transform:uppercase;font-size:clamp(22px,2.4vw,38px);line-height:1;margin-bottom:6px}
+.fv9__tag span{font-size:clamp(12px,1.1vw,15px)}
+.fv9__tag--zu{background:var(--papier);color:var(--grau);box-shadow:inset 0 0 0 1px var(--linie)}
+.fv9__fuss{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:28px;align-items:center;margin-top:clamp(30px,3.4vw,50px);padding-top:28px;border-top:1px solid var(--linie)}
+
+/* 10 Foto: Speiseraum mit Tafel */
+.fv10{background:var(--teal-tief);color:var(--papier)}
+.fv10__buehne{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(14px,1.6vw,22px)}
+.fv10__bild{min-height:clamp(420px,40vw,580px);border-radius:24px}
+.fv10__bild img{position:absolute;inset:0}
+.fv10__tafel{background:var(--papier);color:var(--tinte);border-radius:24px;padding:clamp(28px,3vw,46px);display:flex;flex-direction:column;justify-content:center;gap:4px}
+.fv10__tafel h3{margin-top:14px}
+.fv10__logo img{width:170px;margin-bottom:6px}
+.fv10__k{margin:12px 0 18px}
+
+/* Wahlleiste */
+.fw-leiste{position:fixed;z-index:60;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:6px;padding:6px;border-radius:999px;background:rgba(34,27,22,.9);color:#fff;box-shadow:0 18px 30px -16px rgba(0,0,0,.6);font:500 15px/1 var(--sans)}
+.fw-pf{width:42px;height:42px;border:0;border-radius:50%;background:#fff;color:var(--tinte);font-size:24px;line-height:1;cursor:pointer}
+.fw-name{padding:0 14px;white-space:nowrap}
+.fw-name b{font-family:var(--titel);font-weight:800;font-size:20px;color:var(--aqua)}
+
+@media (max-width:900px){
+  .fv1__in,.fv3__in,.fv4__in,.fv6__spalten,.fv7__in{grid-template-columns:minmax(0,1fr)}
+  .fv2__zeile,.fv8__in,.fv9__fuss{grid-template-columns:minmax(0,1fr)}
+  .fv5__tafel{grid-template-columns:minmax(0,1fr)}
+  .fv10__buehne{grid-template-columns:minmax(0,1fr)}
+  .fv10__bild{min-height:0;aspect-ratio:4/3}
+  .fv9__tag{padding:12px 2px;border-radius:12px}
+  .fv9__tag b{font-size:16px}
+  .fv9__tag span{font-size:10.5px}
+  .fv__studie{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){.fv8__lauf{animation:none}.fv2__wort span{transform:translateY(8%)!important}}
+.fv10__tafel .knopf{align-self:flex-start}
+.fv2 .fv__studie{margin-top:18px;position:relative}
+
+/* ---------- Füsse 11–20 ---------- */
+.fv-3sp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+/* 11 Ozean */
+.fv11{background:var(--aqua);color:var(--teal-tief);padding-top:clamp(90px,9vw,140px)}
+.fv11__wellen{position:absolute;left:0;right:0;top:0;height:80px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40' viewBox='0 0 120 40'%3E%3Cpath d='M0 20 q15 -14 30 0 t30 0 t30 0 t30 0' fill='none' stroke='%23127A7E' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x 0 30px;background-size:120px 40px;animation:wellen 14s linear infinite}
+@keyframes wellen{to{background-position:120px 30px}}
+.fv11__in{max-width:var(--max);margin:0 auto}
+.fv11 h2{font-size:clamp(46px,6vw,100px);margin-bottom:clamp(30px,3.4vw,50px)}
+.fv11 h2 .rot{color:var(--rot)}
+.fv11__spalten{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding-top:26px;border-top:1.5px solid rgba(8,61,65,.3)}
+/* 12 Riesenlogo */
+.fv12{background:var(--teal);color:var(--tinte);min-height:560px}
+.fv12__logo{position:absolute;left:50%;top:40px;width:min(1400px,120vw);transform:translateX(-50%);opacity:.95}
+.fv12__logo img{width:100%}
+.fv12__tafel{position:relative;max-width:var(--max);margin:clamp(220px,26vw,380px) auto 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;background:var(--papier);border-radius:26px;padding:clamp(28px,3vw,46px);box-shadow:0 34px 44px -30px rgba(0,0,0,.6)}
+.fv12 .fv__studie{color:var(--papier);position:relative}
+/* 13 Uhrzeiten */
+.fv13{background:var(--creme);color:var(--tinte)}
+.fv13__in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
+.fv13__tafel{border-radius:26px;background:var(--rot);color:#fff;padding:clamp(26px,3vw,44px);display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 30px 40px -30px rgba(184,51,42,.9)}
+.fv13__tafel:nth-child(2){background:var(--teal-tief)}
+.fv13__tafel span{font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+.fv13__tafel b{font-family:var(--titel);font-weight:800;font-stretch:85%;font-size:clamp(80px,10vw,170px);line-height:.9}
+.fv13__tafel em{font-style:normal;font-family:var(--titel);font-weight:700;text-transform:uppercase;font-size:24px}
+.fv13__satz{max-width:var(--max);margin:22px auto 0;text-align:center;color:var(--grau)}
+.fv13__fuss{max-width:var(--max);margin:clamp(30px,3vw,46px) auto 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:28px;align-items:center;padding-top:26px;border-top:1px solid var(--linie)}
+/* 14 Zwei Hälften */
+.fv14{background:var(--papier);color:var(--tinte);padding:0 0 30px}
+.fv14__haelften{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.fv14__h{padding:clamp(60px,7vw,110px) 24px;text-align:center;color:#fff}
+.fv14__h--rot{background:var(--rot)}.fv14__h--teal{background:var(--teal-tief)}
+.fv14__h span{display:block;font-size:14px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}
+.fv14__h b{display:block;font-family:var(--titel);font-weight:800;font-stretch:85%;text-transform:uppercase;font-size:clamp(56px,7vw,120px);line-height:.9;margin-bottom:12px}
+.fv14__fuss{max-width:var(--max);margin:clamp(36px,4vw,56px) auto 0;padding:0 var(--rand);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.fv14 .fv__studie{padding:18px var(--rand) 0;max-width:none}
+/* 15 Fotostreifen */
+.fv15{background:var(--teal-tief);color:var(--papier);padding-top:0}
+.fv15__streifen{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin:0 calc(-1 * var(--rand)) clamp(40px,4vw,60px);height:clamp(160px,17vw,260px)}
+.fv15__streifen .bild{border-radius:0;height:100%}
+.fv15__streifen .bild img{position:absolute;inset:0;transform:scale(1.04)}
+.fv15__in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;align-items:start}
+.fv15__logo img{width:min(100%,200px)}
+/* 16 Fischform */
+.fv16{background:var(--papier);color:#fff}
+.fv16__buehne{position:relative;max-width:1180px;margin:0 auto}
+.fv16__fisch{width:100%;height:auto;display:block}
+.fv16__fisch path{fill:var(--rot)}
+.fv16__inhalt{position:absolute;left:12%;right:20%;top:50%;transform:translateY(-50%);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:center;text-align:center}
+.js .fv16__inhalt[data-r]{transform:translateY(calc(-50% + 50px))}
+.js .fv16__inhalt[data-r].da{transform:translateY(-50%)}
+.fv16__mitte b{display:block;font-family:var(--titel);font-weight:800;font-size:clamp(60px,7vw,120px);line-height:.85}
+.fv16__mitte span{font-family:var(--titel);font-weight:700;font-stretch:80%;text-transform:uppercase;font-size:18px}
+.fv16__kontakt{max-width:var(--max);margin:26px auto 0;display:flex;justify-content:center;flex-wrap:wrap;gap:10px 18px;color:var(--tinte)}
+.fv16 .fv__studie{color:var(--tinte)}
+/* 17 Terrazzo */
+.fv17{background-color:#E9E2D6;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill-opacity='.55'%3E%3Cpath fill='%23B8A890' d='M12 14l7-3 3 6-6 3z'/%3E%3Cpath fill='%23E2483A' d='M60 20l5 1-1 5-5-1z'/%3E%3Cpath fill='%230C5459' d='M95 12l8 2-2 6-7-2z'/%3E%3Cpath fill='%23B8A890' d='M30 60l9 1-2 7-8-2z'/%3E%3Cpath fill='%23221B16' d='M78 52l4 0 0 4-4 0z'/%3E%3Cpath fill='%23B8A890' d='M100 80l6 4-4 5-5-4z'/%3E%3Cpath fill='%23E2483A' d='M20 96l6 1-1 6-6-2z'/%3E%3Cpath fill='%230C5459' d='M58 98l5 3-3 4-4-3z'/%3E%3Cpath fill='%23221B16' d='M45 35l3 0 0 3-3 0z'/%3E%3Cpath fill='%23B8A890' d='M85 105l3 2-2 3-3-2z'/%3E%3C/g%3E%3C/svg%3E");background-size:120px 120px;color:var(--tinte)}
+.fv17__theke{max-width:var(--max);margin:0 auto;background:var(--papier);border-radius:26px;padding:clamp(28px,3.2vw,50px);box-shadow:0 30px 40px -32px rgba(34,27,22,.55)}
+.fv17__kopf{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid var(--linie)}
+.fv17__logo img{width:180px}
+.fv17__spalten{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+/* 18 Jalousie */
+.fv18{background:#6B3F24;color:var(--tinte);padding-top:0}
+.fv18__lamellen{position:absolute;inset:0;display:grid;grid-template-rows:repeat(14,1fr);gap:6px;padding:10px 0}
+.fv18__lamellen i{background:linear-gradient(180deg,#A86A3F,#7A4A2A);transform-origin:50% 50%;transform:scaleY(.35);transition:transform 1.4s var(--e1)}
+[data-fw]:not([hidden]) .fv18__lamellen i{transform:scaleY(1)}
+.fv18__tafel{position:relative;max-width:1100px;margin:clamp(70px,7vw,110px) auto 0;background:var(--papier);border-radius:26px;padding:clamp(28px,3.2vw,50px);box-shadow:0 34px 44px -30px rgba(0,0,0,.6)}
+.fv18__tafel h2{font-size:clamp(40px,4.6vw,72px);margin-bottom:26px}
+.fv18__spalten{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.fv18 .fv__studie{position:relative;color:var(--papier)}
+/* 19 Telefon */
+.fv19{background:var(--teal-tief);color:var(--papier)}
+.fv19__in{max-width:var(--max);margin:0 auto;text-align:center}
+.fv19__ueber{font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--aqua)}
+.fv19__nummer{display:inline-block;margin:10px 0 clamp(34px,3.6vw,54px);font-family:var(--titel);font-weight:800;font-stretch:80%;font-size:clamp(54px,8.4vw,150px)!important;line-height:1!important;border:0!important;color:var(--rot)}
+.fv19__spalten{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding-top:26px;border-top:1px solid rgba(85,227,218,.2)}
+/* 20 Ruhig */
+.fv20{background:var(--creme);color:var(--tinte);text-align:center}
+.fv20__in{max-width:900px;margin:0 auto}
+.fv20__logo img{width:220px;margin:0 auto 26px}
+.fv20 p{font-size:17px}
+.fv20__links{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 16px;margin-top:10px}
+@media (max-width:900px){
+  .fv11__spalten,.fv12__tafel,.fv13__in,.fv13__fuss,.fv14__haelften,.fv14__fuss,.fv15__in,.fv17__spalten,.fv18__spalten,.fv19__spalten{grid-template-columns:minmax(0,1fr)}
+  .fv15__streifen{grid-template-columns:repeat(3,minmax(0,1fr))}.fv15__streifen .bild:nth-child(n+4){display:none}
+  .fv16__inhalt{position:static;transform:none!important;grid-template-columns:minmax(0,1fr);color:var(--tinte);margin-top:20px}
+  .fv16__mitte{display:none}
+  .fv17__kopf{flex-direction:column;align-items:flex-start}
+}
