@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" class="wartet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>On the table · CEV</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0C5459">
+<link rel="icon" href="../zeichen/zeichen.svg" type="image/svg+xml">
+<link rel="preload" href="../schrift/archivo-schmal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../schrift/dmsans-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'Titel';src:url(../schrift/archivo-schmal.woff2) format('woff2');font-weight:100 900}@font-face{font-family:'Text';src:url(../schrift/dmsans-400.woff2) format('woff2');font-weight:100 449}@font-face{font-family:'Text';src:url(../schrift/dmsans-500.woff2) format('woff2');font-weight:450 900}@font-face{font-family:'Schwarz';src:url(../schrift/archivo-schwarz.woff2) format('woff2');font-weight:100 900}@font-face{font-family:'Schreib';src:url(../schrift/courier-400.woff2) format('woff2');font-weight:100 549}@font-face{font-family:'Schreib';src:url(../schrift/courier-700.woff2) format('woff2');font-weight:550 900}
+:root{--violett:#0C5459;--tief:#083D41;--nacht:#083D41;--lila:#B8332A;--flieder:#EFE4D2;--himmel:#F3EADC;--creme:#F3EADC;--tinte:#221B16;--grau:#6C6158;--mango:#E2483A;--rot:#E2483A;
+  --rand:clamp(16px,4.2vw,68px);--r:18px;--ein:cubic-bezier(.16,1,.3,1);--knopf:cubic-bezier(.32,.72,0,1);
+  --rund:"Titel","Arial Narrow",system-ui,sans-serif;--text:"Text",-apple-system,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--creme)}
+html.wartet body{visibility:hidden}
+body{margin:0;background:var(--creme);color:var(--tinte);font:400 17px/1.64 var(--text);-webkit-font-smoothing:antialiased;overflow-x:clip;font-synthesis:none}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{font-family:var(--rund);font-weight:700;margin:0;letter-spacing:0;text-transform:uppercase}
+p{margin:0}
+.leiste{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:1440px;margin:0 auto;padding:18px var(--rand)}
+.marke{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+.marke svg{width:74px;height:26px}
+.marke span{font:700 22px/1 var(--rund);letter-spacing:.04em;text-transform:uppercase}
+.knopf{display:inline-flex;align-items:center;gap:14px;padding:6px 6px 6px 18px;border-radius:999px;text-decoration:none;font:500 14px/1 var(--text);letter-spacing:.01em;
+  background:#fff;color:var(--violett);box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 10px 26px -12px rgba(4,30,32,.55),0 2px 6px -2px rgba(4,30,32,.25);transition:transform .5s var(--knopf)}
+.knopf i{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--rot);color:#fff;box-shadow:inset 0 -3px 6px rgba(0,0,0,.25),inset 0 2px 3px rgba(255,255,255,.18)}
+.knopf i svg{width:15px;height:15px}
+.knopf:hover{transform:translateY(-2px)}
+.knopf--tief{background:var(--violett);color:#fff}.knopf--tief i{background:var(--rot);color:#fff}
+.kopfbild{background:var(--violett) var(--tap) 0 0/96px 96px;color:#fff;border-radius:0 0 clamp(22px,2.6vw,40px) clamp(22px,2.6vw,40px);overflow:hidden}
+.auftakt{max-width:1440px;margin:0 auto;padding:clamp(48px,7vw,110px) var(--rand) clamp(56px,7vw,110px)}
+.auftakt__tafel{position:relative;z-index:3;background:var(--violett);border-radius:28px;padding:clamp(28px,3.6vw,60px);box-shadow:0 30px 60px -30px rgba(2,24,26,.6)}
+.auftakt .zeile{font:500 14px/1 var(--text);letter-spacing:.2em;text-transform:uppercase;color:#55E3DA;margin:0 0 22px}
+.auftakt h1{font-size:clamp(54px,7.2vw,104px);line-height:.94;margin:0 0 28px;text-wrap:balance}
+.auftakt p.lead{font-size:clamp(18px,1.45vw,21px);max-width:780px;color:#e3f3f2}
+.gruppe{max-width:1440px;margin:0 auto;padding:72px var(--rand) 8px}
+.kopf{display:flex;align-items:baseline;gap:28px;border-top:1px solid rgba(34,27,22,.14);padding-top:26px;margin-bottom:40px}
+.kopf h2{font-size:clamp(32px,3.2vw,46px);line-height:1.04;flex:none;color:var(--violett)}
+.kopf p{color:var(--grau)}
+.stueck{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:56px;align-items:center;margin:0 0 72px}
+.karton{background-color:#EFE4D2;background-image:var(--karton);background-size:300px auto;border-radius:var(--r);padding:7% 6%;display:flex;flex-direction:column;gap:22px;justify-content:center;min-height:380px}
+.reihe{display:flex;justify-content:center;align-items:center;gap:3.4%}
+.reihe img{display:block;height:auto;width:var(--w);filter:drop-shadow(0 10px 14px rgba(34,27,22,.22)) drop-shadow(0 2px 3px rgba(34,27,22,.18))}
+.karton.ohne .reihe img{filter:none;border-radius:10px}
+.text h3{font-size:clamp(28px,2.4vw,38px);line-height:1.08;margin:0 0 16px;color:var(--violett)}
+.text .satz{font-size:18px;margin:0 0 12px}
+.text .wozu{font-size:16px;margin:0 0 16px;color:var(--grau)}
+.text .format{font:500 13.5px/1.5 var(--text);letter-spacing:.12em;text-transform:uppercase;color:var(--lila);margin:0 0 22px}
+.knoepfe{display:flex;flex-wrap:wrap;gap:10px}
+.weiter{max-width:1440px;margin:24px auto 0;padding:0 var(--rand)}
+.weiter h2{font-size:clamp(28px,2.6vw,36px);margin:0 0 22px;border-top:1px solid rgba(34,27,22,.14);padding-top:26px;color:var(--violett)}
+.wege{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.weg{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 22px;border-radius:14px;background:var(--flieder);text-decoration:none;font:500 15px/1.3 var(--text);color:var(--violett);transition:transform .5s var(--knopf)}
+.weg:hover{transform:translateY(-2px)}
+.weg i{flex:none;width:32px;height:32px;border-radius:50%;background:var(--rot);color:#fff;display:grid;place-items:center}
+.weg svg{width:15px;height:15px}
+.schluss{margin-top:72px;background:var(--nacht) var(--tapn) 0 0/96px 96px;color:#e3f3f2;border-radius:clamp(22px,2.6vw,40px) clamp(22px,2.6vw,40px) 0 0}
+.schluss__in{max-width:1440px;margin:0 auto;padding:56px var(--rand) 64px;display:flex;justify-content:space-between;align-items:center;gap:24px;font-size:15px}
+.schluss__in>div{background:var(--nacht);border-radius:16px;padding:16px 20px}
+/* Übersicht */
+.kapitel{max-width:1440px;margin:0 auto;padding:0 var(--rand)}
+.kap{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:center;padding:56px 0;border-top:1px solid rgba(34,27,22,.14)}
+.kap:first-child{border-top:0}
+.kap:nth-child(even) .kap__bild{order:2}
+.kap__bild{background-color:#EFE4D2;background-image:var(--karton);background-size:300px auto;border-radius:var(--r);padding:6% 5%;display:flex;gap:4%;align-items:center;justify-content:center;min-height:380px}
+.kap__bild img{width:var(--w);height:auto;filter:drop-shadow(0 10px 14px rgba(34,27,22,.22))}
+.kap__bild img.flach{filter:none;border-radius:12px}
+.kap h2{font-size:clamp(34px,3.4vw,50px);line-height:1.04;color:var(--violett);margin:0 0 16px}
+.kap p{font-size:18px;margin:0 0 14px}
+.kap .zahl{font:500 13.5px/1.5 var(--text);letter-spacing:.12em;text-transform:uppercase;color:var(--lila);margin:0 0 22px}
+/* Bewegung beim Hereinkommen, aus dem Werkbank-Kit (werkbank.css): hochschweben, reinzoomen, beim Scrollen leicht treiben */
+[data-a]{transition:opacity .9s var(--ein),transform 1.25s var(--ein);transition-delay:calc(var(--vz,0ms) + var(--i,0)*90ms)}
+[data-a="auf"]{opacity:0;transform:translateY(42px)}
+[data-a="schweb"]{opacity:0;transform:translateY(120px) rotate(var(--r0,0deg)) scale(.93);transition-duration:1.05s,1.7s}
+[data-a="gross"]{opacity:0;transform:scale(.92)}
+[data-a="zoom"]{opacity:0;transform:scale(1.22)}
+[data-a].da{opacity:1;transform:none}
+[data-a="schweb"].da{transform:rotate(var(--r,0deg))}
+[data-drift]{will-change:transform}
+@media (max-width:980px){.karton [data-a="schweb"],.kap__bild [data-a="schweb"]{transform:translateY(28px) scale(.97)}.karton [data-a="schweb"].da,.kap__bild [data-a="schweb"].da{transform:none}.stueck .text[data-a="auf"]{--vz:420ms;transform:translateY(18px)}.stueck .text[data-a="auf"].da{transform:none}}
+@media (prefers-reduced-motion:reduce){[data-a]{opacity:1!important;transform:rotate(var(--r,0deg))!important;transition:none!important}}
+/* Bühne im Auftakt: Stücke schweben um den Titel */
+.auftakt{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:clamp(24px,3vw,56px);align-items:center}
+.buehne{position:relative;aspect-ratio:1/1.04;margin:-3% -4% -3% 0}
+.buehne .st{position:absolute;display:block;height:auto;filter:drop-shadow(0 22px 26px rgba(2,24,26,.45)) drop-shadow(0 3px 5px rgba(2,24,26,.3))}
+.buehne .st.flach{border-radius:10px}
+.buehne__klein{display:none}
+@media (max-width:980px){.auftakt{grid-template-columns:1fr}.buehne{aspect-ratio:1/.98;margin:0 auto;width:min(100%,640px)}.stueck,.kap{grid-template-columns:1fr;gap:26px}.kap:nth-child(even) .kap__bild{order:0}.karton,.kap__bild{min-height:0}.wege{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){body{font-size:16px}.leiste{padding:14px 16px}.marke span{font-size:22px}.auftakt{padding:28px 16px 40px}.auftakt__tafel{padding:26px 22px;border-radius:22px}.auftakt h1{font-size:clamp(44px,13vw,60px)}
+  .gruppe{padding:48px 16px 4px}.kopf{flex-direction:column;gap:8px;margin-bottom:26px}.karton{padding:9% 5%;gap:14px}.text h3{font-size:27px}.weiter,.kapitel{padding:0 16px}.wege{grid-template-columns:1fr}.kap{padding:40px 0}
+  .schluss__in{padding:40px 16px 56px;flex-direction:column;align-items:flex-start}.leiste .knopf span{display:none}}
+:root{--tap:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2296%22%20height%3D%2296%22%20viewBox%3D%220%200%2096%2096%22%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20fill%3D%22%230C5459%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23127A7E%22%20stroke-width%3D%221.4%22%20opacity%3D%22.55%22%3E%3Crect%20x%3D%223%22%20y%3D%223%22%20width%3D%2290%22%20height%3D%2290%22%20rx%3D%224%22%2F%3E%3Cpath%20d%3D%22M48%2012c10%200%2018%208%2018%2018s-8%2018-18%2018-18-8-18-18%208-18%2018-18zM48%2084c-10%200-18-8-18-18s8-18%2018-18%2018%208%2018%2018-8%2018-18%2018z%22%2F%3E%3Cpath%20d%3D%22M12%2048c0-10%208-18%2018-18M84%2048c0%2010-8%2018-18%2018M12%2048c0%2010%208%2018%2018%2018M84%2048c0-10-8-18-18-18%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");--tapn:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2296%22%20height%3D%2296%22%20viewBox%3D%220%200%2096%2096%22%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20fill%3D%22%23083D41%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%230C5459%22%20stroke-width%3D%221.4%22%20opacity%3D%22.55%22%3E%3Crect%20x%3D%223%22%20y%3D%223%22%20width%3D%2290%22%20height%3D%2290%22%20rx%3D%224%22%2F%3E%3Cpath%20d%3D%22M48%2012c10%200%2018%208%2018%2018s-8%2018-18%2018-18-8-18-18%208-18%2018-18zM48%2084c-10%200-18-8-18-18s8-18%2018-18%2018%208%2018%2018-8%2018-18%2018z%22%2F%3E%3Cpath%20d%3D%22M12%2048c0-10%208-18%2018-18M84%2048c0%2010-8%2018-18%2018M12%2048c0%2010%208%2018%2018%2018M84%2048c0-10-8-18-18-18%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");--karton:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2296%22%20height%3D%2296%22%20viewBox%3D%220%200%2096%2096%22%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20fill%3D%22%23EFE4D2%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23C9B79D%22%20stroke-width%3D%221.4%22%20opacity%3D%22.55%22%3E%3Crect%20x%3D%223%22%20y%3D%223%22%20width%3D%2290%22%20height%3D%2290%22%20rx%3D%224%22%2F%3E%3Cpath%20d%3D%22M48%2012c10%200%2018%208%2018%2018s-8%2018-18%2018-18-8-18-18%208-18%2018-18zM48%2084c-10%200-18-8-18-18s8-18%2018-18%2018%208%2018%2018-8%2018-18%2018z%22%2F%3E%3Cpath%20d%3D%22M12%2048c0-10%208-18%2018-18M84%2048c0%2010-8%2018-18%2018M12%2048c0%2010%208%2018%2018%2018M84%2048c0-10-8-18-18-18%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")}</style>
+<noscript><style>html.wartet body{visibility:visible}[data-a]{opacity:1;transform:none}</style></noscript>
+<script>
+(function(){var d=document.documentElement,f=false;function zeig(){if(!f){f=true;d.classList.remove('wartet');window.__los=1;dispatchEvent(new Event('los'))}}setTimeout(zeig,2600);
+document.addEventListener('DOMContentLoaded',function(){var h=innerHeight,w=[];document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.top<h&&r.bottom>0){i.loading='eager';if(!i.complete)w.push(new Promise(function(o){i.addEventListener('load',o);i.addEventListener('error',o)}))}});
+Promise.all(w.concat([document.fonts?document.fonts.ready:0])).then(zeig)});})();
+</script>
+</head>
+<body>
+<div class="kopfbild">
+<nav class="leiste"><a class="marke" href="../index.html" aria-label="All pieces"><svg viewBox="0 0 74 26" aria-hidden="true"><rect x="1" y="1" width="21" height="24" fill="#FFFDF9" stroke="#221B16" stroke-width="1.6"/><text x="11.5" y="19.2" font-size="14" text-anchor="middle" fill="#E2483A" style="font-family:Titel;font-weight:700">C</text><rect x="26.5" y="1" width="21" height="24" fill="#FFFDF9" stroke="#221B16" stroke-width="1.6"/><text x="37.0" y="19.2" font-size="14" text-anchor="middle" fill="#E2483A" style="font-family:Titel;font-weight:700">E</text><rect x="52" y="1" width="21" height="24" fill="#FFFDF9" stroke="#221B16" stroke-width="1.6"/><text x="62.5" y="19.2" font-size="14" text-anchor="middle" fill="#E2483A" style="font-family:Titel;font-weight:700">V</text></svg><span>CEV</span></a><a class="knopf" href="../index.html"><span>All pieces</span><i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></nav>
+<header class="auftakt"><div class="auftakt__tafel">
+  <p class="zeile">On the table · ideas for CEV</p>
+  <h1>On the table</h1>
+  <p class="lead">Three inserts for an acrylic stand, each with front and back, and a card to take home: the drinks and the chef’s recommendations set like CEV’s printed menu, and the rating on Google.</p>
+</div><div class="buehne" aria-hidden="true"><img class="st" src="img/aufsteller-getraenke-staender.webp?v=202611230925" alt="" decoding="sync" data-a="schweb" data-drift="0.1" style="left:3.8%;top:1.9%;width:39.4%;z-index:1;--i:1;--r:-5deg;--r0:-15deg"><img class="st" src="img/aufsteller-google-vorn.webp?v=202611230925" alt="" decoding="sync" data-a="schweb" data-drift="-0.1" style="left:39.5%;top:7.5%;width:30.2%;z-index:2;--i:2;--r:6deg;--r0:18deg"><img class="st" src="img/aufsteller-empfehlung-hinten.webp?v=202611230925" alt="" decoding="sync" data-a="schweb" data-drift="0.14" style="left:65.8%;top:24.4%;width:30.2%;z-index:3;--i:3;--r:-3deg;--r0:-9deg"><img class="st flach" src="img/reservierungskarte-hinten.webp?v=202611230925" alt="" decoding="sync" data-a="schweb" data-drift="-0.07" style="left:20.7%;top:58.3%;width:46.4%;z-index:4;--i:4;--r:4deg;--r0:12deg"></div></header></div>
+<section class="gruppe"><header class="kopf" data-a="auf"><h2>From the menu</h2><p>Set like the menu on the tables, with names, ingredients and prices.</p></header><article class="stueck" id="aufsteller-getraenke">
+  <div class="karton" data-a="gross"><div class="reihe"><img src="img/aufsteller-getraenke-staender.webp?v=202611230925" width="958" height="1400" alt="" decoding="sync" data-a="schweb" style="--w:36.71%;--i:1;--r0:4deg"><img src="img/aufsteller-getraenke-vorn.webp?v=202611230925" width="932" height="1400" alt="" decoding="sync" data-a="schweb" style="--w:28.21%;--i:2;--r0:-6deg"><img src="img/aufsteller-getraenke-hinten.webp?v=202611230925" width="932" height="1400" alt="" decoding="sync" data-a="schweb" style="--w:28.21%;--i:3;--r0:8deg"></div></div>
+  <div class="text" data-a="auf" style="--i:2">
+    <h3>Drinks on the table</h3>
+    <p class="satz">The drinks page of the menu as a stand for the table, set like CEV’s printed menu: the five cocktails with what goes into them on the front, refreshments and beers on the back.</p>
+    <p class="wozu">Names, ingredients and prices from the menu, the same as on the website.</p>
+    <p class="format">Stand insert 100 × 150 mm · front and back</p>
+    <div class="knoepfe"><a class="knopf" href="pdf/cev-aufsteller-getraenke.pdf?v=202611230925" target=_blank rel=noopener>PDF, actual size<i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+  </div>
+</article><article class="stueck" id="aufsteller-empfehlung">
+  <div class="karton" data-a="gross"><div class="reihe"><img src="img/aufsteller-empfehlung-staender.webp?v=202611230925" width="958" height="1400" alt="" decoding="async" loading=lazy data-a="schweb" style="--w:36.71%;--i:1;--r0:4deg"><img src="img/aufsteller-empfehlung-vorn.webp?v=202611230925" width="932" height="1400" alt="" decoding="async" loading=lazy data-a="schweb" style="--w:28.21%;--i:2;--r0:-6deg"><img src="img/aufsteller-empfehlung-hinten.webp?v=202611230925" width="932" height="1400" alt="" decoding="async" loading=lazy data-a="schweb" style="--w:28.21%;--i:3;--r0:8deg"></div></div>
+  <div class="text" data-a="auf" style="--i:2">
+    <h3>Chef’s recommendations</h3>
+    <p class="satz">The seven dishes marked *** on CEV’s menu, set like the menu: Classic Kinilaw, Fried Spring Rolls and Grilled Fish Belly on the front, Pacifico, Santa Monica, General Luna and Santa Fe on the back, each with what goes into it and its price.</p>
+    <p class="wozu">Names, ingredients and prices from the menu, the same as on the website.</p>
+    <p class="format">Stand insert 100 × 150 mm · front and back</p>
+    <div class="knoepfe"><a class="knopf" href="pdf/cev-aufsteller-empfehlung.pdf?v=202611230925" target=_blank rel=noopener>PDF, actual size<i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+  </div>
+</article></section><section class="gruppe"><header class="kopf" data-a="auf"><h2>Rating and the next visit</h2><p>From Google, and the number for the next reservation.</p></header><article class="stueck" id="aufsteller-google">
+  <div class="karton" data-a="gross"><div class="reihe"><img src="img/aufsteller-google-staender.webp?v=202611230925" width="958" height="1400" alt="" decoding="async" loading=lazy data-a="schweb" style="--w:36.71%;--i:1;--r0:4deg"><img src="img/aufsteller-google-vorn.webp?v=202611230925" width="932" height="1400" alt="" decoding="async" loading=lazy data-a="schweb" style="--w:28.21%;--i:2;--r0:-6deg"><img src="img/aufsteller-google-hinten.webp?v=202611230925" width="932" height="1400" alt="" decoding="async" loading=lazy data-a="schweb" style="--w:28.21%;--i:3;--r0:8deg"></div></div>
+  <div class="text" data-a="auf" style="--i:2">
+    <h3>4.8 on Google</h3>
+    <p class="satz">The rating on Google, 4.8 from 1,418 reviews, with a QR code to CEV on Google Maps. On the back two guests’ reviews from 2026 under a photo of the dining room.</p>
+    <p class="wozu">Rating and reviews as on Google in November 2026.</p>
+    <p class="format">Stand insert 100 × 150 mm · front and back</p>
+    <div class="knoepfe"><a class="knopf" href="pdf/cev-aufsteller-google.pdf?v=202611230925" target=_blank rel=noopener>PDF, actual size<i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+  </div>
+</article><article class="stueck" id="reservierungskarte">
+  <div class="karton" data-a="gross"><div class="reihe"><img src="img/reservierungskarte-vorn.webp?v=202611230925" width="966" height="627" alt="" decoding="async" loading=lazy data-a="schweb" style="--w:48.28%;--i:1;--r0:4deg"><img src="img/reservierungskarte-hinten.webp?v=202611230925" width="966" height="627" alt="" decoding="async" loading=lazy data-a="schweb" style="--w:48.28%;--i:2;--r0:-6deg"></div></div>
+  <div class="text" data-a="auf" style="--i:2">
+    <h3>Card to take home</h3>
+    <p class="satz">A card to take with the bill for the next visit: the logo on the front, on the back «Reservations highly encouraged», the number with a QR code for WhatsApp, the address beside Kudo Surf, the opening hours and the Instagram name.</p>
+    <p class="wozu">For the bill folder and the counter.</p>
+    <p class="format">Card 85 × 55 mm · front and back</p>
+    <div class="knoepfe"><a class="knopf" href="pdf/cev-reservierungskarte.pdf?v=202611230925" target=_blank rel=noopener>PDF, actual size<i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+  </div>
+</article></section>
+<section class="weiter" data-a="auf"><h2>More for CEV</h2><div class="wege"><a class="weg" href="../sticker/index.html"><span>Stickers</span><i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a><a class="weg" href="../karte/index.html"><span>The menu in print</span><i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a><a class="weg" href="../instagram/stories.html"><span>Instagram stories and posts</span><i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a><a class="weg" href="../draussen/index.html"><span>For hostels and surf camps</span><i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a><a class="weg" href="../instagram/index.html"><span>Instagram feed</span><i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div></section>
+<footer class="schluss"><div class="schluss__in"><div><a class="marke" href="../index.html" aria-label="All pieces"><svg viewBox="0 0 74 26" aria-hidden="true"><rect x="1" y="1" width="21" height="24" fill="#FFFDF9" stroke="#221B16" stroke-width="1.6"/><text x="11.5" y="19.2" font-size="14" text-anchor="middle" fill="#E2483A" style="font-family:Titel;font-weight:700">C</text><rect x="26.5" y="1" width="21" height="24" fill="#FFFDF9" stroke="#221B16" stroke-width="1.6"/><text x="37.0" y="19.2" font-size="14" text-anchor="middle" fill="#E2483A" style="font-family:Titel;font-weight:700">E</text><rect x="52" y="1" width="21" height="24" fill="#FFFDF9" stroke="#221B16" stroke-width="1.6"/><text x="62.5" y="19.2" font-size="14" text-anchor="middle" fill="#E2483A" style="font-family:Titel;font-weight:700">V</text></svg><span>CEV</span></a></div>
+<div>Ideas for CEV: Ceviche &amp; Kinilaw Shack, Tourism Road, General Luna · photos are CEV’s own · a design study by Tasty Studios</div></div></footer>
+<script>(function(){var z=[].slice.call(document.querySelectorAll('[data-a]')),ruhig=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function start(){if(!('IntersectionObserver' in window)||ruhig){z.forEach(function(x){x.classList.add('da')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){io.unobserve(x.target);x.target.classList.add('da')}})},{rootMargin:'0px 0px -4% 0px'});z.forEach(function(x){io.observe(x)});
+var dr=[].slice.call(document.querySelectorAll('[data-drift]')),t=0;function lauf(){t=0;if(innerWidth<900){return}var vh=innerHeight,w=dr.map(function(el){var r=el.getBoundingClientRect(),g=vh*.65+r.height/2;return Math.max(-g,Math.min(g,r.top+r.height/2-vh/2))});
+dr.forEach(function(el,i){el.style.translate='0 '+(w[i]*+el.getAttribute('data-drift')).toFixed(1)+'px'})}
+addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(lauf)},{passive:true});lauf()}
+if(window.__los)start();else addEventListener('los',start,{once:true});
+addEventListener('pageshow',function(ev){if(ev.persisted)z.forEach(function(x){x.classList.add('da')})});})();</script>
+<script src="../besuch.js?v=1795403107" defer></script>
+</body>
+</html>
