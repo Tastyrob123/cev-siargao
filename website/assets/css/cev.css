@@ -683,3 +683,13 @@ dialog.res[open]{animation:resauf .5s var(--e1)}
 .ct-tafel p,.ct-tafel.ct-tafel--rot p{color:#3B322B}
 .ct-tafel .ct-datum,.ct-tafel .ct-gross,.ct-tafel.ct-tafel--rot .ct-datum{color:var(--rot)!important}
 .ct-tafel .ct-klein,.ct-tafel.ct-tafel--rot .ct-klein{color:var(--grau)!important;border-top-color:var(--linie)}
+.teller-kopf .titel-l{font-size:clamp(36px,4.3vw,66px)}
+/* Handy (23.11.2026, Robert: Bilder wackelig und zu spät): eine ruhige Bewegung je Stück, kurz und klein, ohne Zoom im Rahmen */
+@media (max-width:860px){
+  .js [data-r]{transform:translate3d(0,28px,0);transition-duration:.75s;transition-delay:calc(var(--i,0) * 50ms)}
+  .js [data-teller]{transform:translate3d(0,32px,0);transition-duration:.8s;transition-delay:calc(var(--i,0) * 50ms)}
+  .js [data-r].da,.js [data-teller].da{transform:none}
+  .bild img,.js .rahmen .bild img,.js .pk1__wand .bild img{transform:none!important;transition:none!important}
+  .js .pk1__wand .bild{transform:translate3d(0,24px,0);transition-duration:.75s}
+  [data-schlitz] .zi{transition-duration:.7s}
+}

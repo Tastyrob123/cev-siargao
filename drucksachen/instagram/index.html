@@ -65,7 +65,7 @@ a{color:inherit;text-decoration:none}
 .btns div.p{background:#0095f6}
 .hl{display:flex;gap:14px;padding:14px 16px 12px;overflow-x:auto;scrollbar-width:none}
 .hl::-webkit-scrollbar{display:none}
-.h{text-align:center;font-size:12px;flex:none;width:68px;line-height:1.25}
+.h{text-align:center;font-size:13px;flex:none;width:72px;line-height:1.25}
 .h i{display:block;width:66px;height:66px;border-radius:50%;border:1px solid #3a3a3a;padding:3px;margin:0 auto 6px}
 .h i img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
 .tabs{display:flex;border-bottom:1px solid #262626;position:sticky;top:48px;background:#000;z-index:19}
@@ -78,8 +78,8 @@ a{color:inherit;text-decoration:none}
 .nav{height:82px;flex:none;display:flex;justify-content:space-around;align-items:flex-start;padding-top:12px;border-top:1px solid #1d1d1d;background:#000}
 .nav .me{width:26px;height:26px;border-radius:50%;border:2px solid #fff;overflow:hidden}
 .nav .me img{width:100%;height:100%;object-fit:cover;display:block}
-.post{position:absolute;inset:0;background:#000;z-index:40;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .5s var(--e2);visibility:hidden}
-.post.on{transform:none;visibility:visible}
+.post{position:absolute;inset:0;background:#000;z-index:40;display:flex;flex-direction:column;transform:translateX(28px);opacity:0;transition:opacity .35s var(--e2),transform .45s var(--e2),visibility 0s .45s;visibility:hidden}
+.post.on{transform:none;opacity:1;visibility:visible;transition:opacity .35s var(--e2),transform .45s var(--e2)}
 .post .bar{height:54px;flex:none}
 .post .ph{display:flex;align-items:center;gap:10px;padding:8px 14px}
 .post .ph b{font-size:14px}
@@ -217,6 +217,6 @@ body:has(#post.on) #grid{visibility:hidden;transition:visibility 0s .5s}
 })();
 </script>
 <noscript><style>html.warten body{visibility:visible}.aside>*,.devwrap{opacity:1;transform:none}</style></noscript>
-<script src="../besuch.js?v=1795403817" defer></script>
+<script src="../besuch.js?v=1795404506" defer></script>
 </body>
 </html>
