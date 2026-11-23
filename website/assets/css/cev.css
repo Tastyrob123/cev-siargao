@@ -684,15 +684,16 @@ dialog.res[open]{animation:resauf .5s var(--e1)}
 .ct-tafel .ct-datum,.ct-tafel .ct-gross,.ct-tafel.ct-tafel--rot .ct-datum{color:var(--rot)!important}
 .ct-tafel .ct-klein,.ct-tafel.ct-tafel--rot .ct-klein{color:var(--grau)!important;border-top-color:var(--linie)}
 .teller-kopf .titel-l{font-size:clamp(36px,4.3vw,66px)}
-/* Handy (23.11.2026, Robert: Bilder wackelig und zu spät): eine ruhige Bewegung je Stück, kurz und klein, ohne Zoom im Rahmen */
-@media (max-width:860px){
-  .js [data-r]{transform:translate3d(0,28px,0);transition-duration:.75s;transition-delay:calc(var(--i,0) * 50ms)}
-  .js [data-teller]{transform:translate3d(0,32px,0);transition-duration:.8s;transition-delay:calc(var(--i,0) * 50ms)}
-  .js [data-r].da,.js [data-teller].da{transform:none}
-  .bild img,.js .rahmen .bild img,.js .pk1__wand .bild img{transform:none!important;transition:none!important}
-  .js .pk1__wand .bild{transform:translate3d(0,24px,0);transition-duration:.75s}
-  [data-schlitz] .zi{transition-duration:.7s}
-}
+/* Reinschweben wie die abgenommene Vorlage (Bareiss, feedback-reinfliegen-einzeln-standard, Robert 23.11.2026 «so richtig perfekt reingezoomt und hochgeschwebt»):
+   jedes Stück startet 12 % vor dem unteren Rand mit fertig geladenem Bild, gleitet 64–96 px hoch (Bilder dazu .975 → 1), Foto zoomt im Rahmen 1,13 → 1,04 */
+:root{--ein:cubic-bezier(.16,1,.3,1)}
+.js [data-r]{transform:translate3d(0,clamp(64px,6.2vw,96px),0);transition:transform 1.6s var(--ein);transition-delay:calc(var(--i,0) * 90ms)}
+.js .bild[data-r],.js [data-r]:has(>img),.js [data-r]:has(>.bild){transform:translate3d(0,clamp(64px,6.2vw,96px),0) scale(.975);transform-origin:50% 100%}
+.js [data-r].da{transform:none}
+.bild img{transform:scale(1.13);transition:transform 2.2s var(--ein)}
+.bild.da img,.da .bild img{transform:scale(1.04)}
+.js [data-teller]{transition:transform 1.6s var(--ein);transition-delay:calc(var(--i,0) * 90ms)}
+[data-schlitz] .zi{transition:transform 1.3s var(--ein);transition-delay:calc(var(--z,0) * 95ms + var(--sv,0ms))}
 /* Fenster ohne overflow:hidden (der Ausschnitt kommt aus clip-path), der Schatten hinter dem Satz bleibt im Bild */
 .fenster{overflow:visible}
 .fenster__satz::before{inset:-28% min(-22%, 0px)}

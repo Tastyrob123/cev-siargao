@@ -74,16 +74,28 @@
     if (ruhig || !('IntersectionObserver' in window)) { ziele.forEach(function (e) { e.classList.add('da'); }); return; }
     var vor = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (!e.isIntersecting) return; vor.unobserve(e.target); e.target.loading = 'eager'; if (e.target.decode) e.target.decode().catch(function () {}); });
-    }, { rootMargin: (innerWidth < 861 ? '300%' : '150%') + ' 0px 150% 0px' });
+    }, { rootMargin: '0px 0px 150% 0px' });
     D.querySelectorAll('img[loading=lazy]').forEach(function (i) { vor.observe(i); });
+    /* wie Bareiss: Auftritt 12 % vor dem unteren Rand, erst mit geladenem und entpacktem Bild (höchstens 2,5 s); schon vorbeigescrollte Stücke sofort */
+    function bereit(el, dann) {
+      var ims = [].filter.call(el.tagName === 'IMG' ? [el] : el.querySelectorAll('img'), function (im) { return im.offsetParent !== null; });
+      var n = ims.length, los = false, fertig = function () { if (!los) { los = true; dann(); } };
+      if (!n) return fertig();
+      var eins = function () { if (--n <= 0) fertig(); };
+      ims.forEach(function (im) {
+        var ent = function () { (im.decode ? im.decode() : Promise.resolve()).then(eins, eins); };
+        if (im.complete && im.naturalWidth > 1) return ent();
+        im.loading = 'eager'; im.addEventListener('load', ent, { once: true }); im.addEventListener('error', eins, { once: true });
+      });
+      setTimeout(fertig, 2500);
+    }
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
-        if (!e.isIntersecting) return; io.unobserve(e.target);
-        var el = e.target, im = el.tagName === 'IMG' ? el : el.querySelector('img');
-        var los = function () { if (el.classList.contains('da')) return; el.classList.add('da'); var z = el.querySelector('[data-zahl]'); if (z) zaehlen(z); };
-        if (im && !(im.complete && im.naturalWidth)) { im.addEventListener('load', los, { once: true }); setTimeout(los, innerWidth < 861 ? 600 : 1800); } else los();
+        if (!e.isIntersecting && e.boundingClientRect.bottom >= 0) return; io.unobserve(e.target);
+        var el = e.target;
+        bereit(el, function () { if (el.classList.contains('da')) return; el.classList.add('da'); var z = el.querySelector('[data-zahl]'); if (z) zaehlen(z); });
       });
-    }, { rootMargin: innerWidth < 861 ? '0px 0px 6% 0px' : '0px 0px -6% 0px' });
+    }, { rootMargin: '0px 0px 12% 0px', threshold: 0 });
     ziele.forEach(function (e) { if (e.hasAttribute('data-schlitz')) zeilen(e); io.observe(e); });
     /* Fenster: Bild und Satz stehen fest, der Satz steigt einmal hoch, wenn das Fenster aufgeht */
     var fo = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('da'); fo.unobserve(e.target); } }); }, { rootMargin: '0px 0px -35% 0px' });
