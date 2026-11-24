@@ -6,7 +6,7 @@
   var D = document, H = D.documentElement, ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* 1 Erster Blick */
-  function imBild(el) { var r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight && r.width > 2; }
+  function imBild(el) { var f = el.closest && el.closest('.fenster, .sv10'); var r = (f || el).getBoundingClientRect();   /* Fensterbild steht fest im Bildschirm, sichtbar nur im Fenster */ return r.bottom > 0 && r.top < innerHeight && r.width > 2; }
   var schrift = !(D.fonts && D.fonts.load), bilder = false;
   if (!schrift) Promise.all([D.fonts.load('700 1em Archivo'), D.fonts.load('400 1em "DM Sans"')]).then(function () { schrift = true; if (bilder) zeigen(); }, function () { schrift = true; if (bilder) zeigen(); });
   function zeigen() {
@@ -14,6 +14,7 @@
     D.querySelectorAll('.kopf [data-schlitz], .wand [data-schlitz]').forEach(zeilen);
     H.classList.remove('laed');
     requestAnimationFrame(function () { requestAnimationFrame(function () {
+      [].forEach.call(D.querySelectorAll('[data-r],[data-teller],.bild'), function (e) { if (imBild(e) && ![].some.call(e.querySelectorAll('img'), function (i) { return !(i.complete && i.naturalWidth); })) e.classList.add('da'); });   /* im ersten Bild: sofort da, nie einen Takt unsichtbar */
       H.classList.add('bereit');
       D.querySelectorAll('.kopf [data-r], .kopf [data-schlitz], .kopf .bild, .wand [data-schlitz]').forEach(function (e) { e.classList.add('da'); });
       beobachten();
@@ -72,22 +73,21 @@
   function beobachten() {
     var ziele = D.querySelectorAll('[data-r]:not(.da),[data-teller]:not(.da),[data-schlitz]:not(.da),.bild:not(.da)');
     if (ruhig || !('IntersectionObserver' in window)) { ziele.forEach(function (e) { e.classList.add('da'); }); return; }
-    var vor = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (!e.isIntersecting) return; vor.unobserve(e.target); e.target.loading = 'eager'; if (e.target.decode) e.target.decode().catch(function () {}); });
-    }, { rootMargin: '0px 0px 150% 0px' });
-    D.querySelectorAll('img[loading=lazy]').forEach(function (i) { vor.observe(i); });
-    /* wie Bareiss: Auftritt 12 % vor dem unteren Rand, erst mit geladenem und entpacktem Bild (höchstens 2,5 s); schon vorbeigescrollte Stücke sofort */
+    /* Vorladen (24.11.2026, leere Kachel bei Kamayan): gleich nach dem ersten Bild alle übrigen Bilder der Reihe nach holen, je zwei gleichzeitig */
+    var schlange = [].slice.call(D.querySelectorAll('.fenster img[loading=lazy], .sv10 img[loading=lazy], .blatt__kopf img[loading=lazy]')).concat([].filter.call(D.querySelectorAll('img[loading=lazy]'), function (i) { return !i.closest('.fenster, .sv10, .blatt__kopf'); }));   /* bildschirmfüllende Fenster und Kartenkopf zuerst */
+    function naechstes() { var im = schlange.shift(); if (!im) return; if (im.complete && im.naturalWidth) return naechstes(); var w = function () { naechstes(); }; im.addEventListener('load', w, { once: true }); im.addEventListener('error', w, { once: true }); im.loading = 'eager'; }
+    naechstes(); naechstes();
+    /* wie Bareiss: Auftritt 12 % vor dem unteren Rand, erst mit geladenem Bild (nur load; bis dahin ist die Kachel unsichtbar); schon vorbeigescrollte Stücke sofort */
     function bereit(el, dann) {
       var ims = [].filter.call(el.tagName === 'IMG' ? [el] : el.querySelectorAll('img'), function (im) { return im.offsetParent !== null; });
       var n = ims.length, los = false, fertig = function () { if (!los) { los = true; dann(); } };
       if (!n) return fertig();
       var eins = function () { if (--n <= 0) fertig(); };
       ims.forEach(function (im) {
-        var ent = function () { (im.decode ? im.decode() : Promise.resolve()).then(eins, eins); };
-        if (im.complete && im.naturalWidth > 1) return ent();
-        im.loading = 'eager'; im.addEventListener('load', ent, { once: true }); im.addEventListener('error', eins, { once: true });
+        if (im.complete && im.naturalWidth > 1) return eins();
+        im.loading = 'eager'; im.addEventListener('load', eins, { once: true }); im.addEventListener('error', eins, { once: true });
       });
-      setTimeout(fertig, 2500);
+      setTimeout(fertig, 20000);
     }
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) {

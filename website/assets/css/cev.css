@@ -95,6 +95,8 @@ html.js.laed body{animation:notauf 0s 4s forwards}
 /* Auftritte: deckend von unten herein */
 .js [data-r]{transform:translateY(56px);transition:transform 1.25s var(--e1);transition-delay:calc(var(--i,0) * 90ms)}
 .js [data-r].da{transform:none}
+/* Kachel ohne fertiges Bild nie zeigen (24.11.2026): Bildkacheln bleiben unsichtbar, bis cev.js sie mit geladenem Bild auf .da setzt */
+.js.bereit .bild[data-r]:not(.da),.js.bereit [data-r]:not(.da) .bild,.js.bereit [data-teller]:not(.da) .bild,.js.bereit [data-r]:not(.da) img,.js.bereit [data-teller]:not(.da) img{visibility:hidden}
 .js [data-teller]{transform:translateY(70px) rotate(-7deg) scale(1.05);transition:transform 1.4s var(--e1);transition-delay:calc(var(--i,0) * 110ms)}
 .js [data-teller].da{transform:none}
 [data-schlitz] .zl{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
@@ -690,6 +692,8 @@ dialog.res[open]{animation:resauf .5s var(--e1)}
 .js [data-r]{transform:translate3d(0,clamp(64px,6.2vw,96px),0);transition:transform 1.6s var(--ein);transition-delay:calc(var(--i,0) * 90ms)}
 .js .bild[data-r],.js [data-r]:has(>img),.js [data-r]:has(>.bild){transform:translate3d(0,clamp(64px,6.2vw,96px),0) scale(.975);transform-origin:50% 100%}
 .js [data-r].da{transform:none}
+/* Kachel ohne fertiges Bild nie zeigen (24.11.2026): Bildkacheln bleiben unsichtbar, bis cev.js sie mit geladenem Bild auf .da setzt */
+.js.bereit .bild[data-r]:not(.da),.js.bereit [data-r]:not(.da) .bild,.js.bereit [data-teller]:not(.da) .bild,.js.bereit [data-r]:not(.da) img,.js.bereit [data-teller]:not(.da) img{visibility:hidden}
 .bild img{transform:scale(1.13);transition:transform 2.2s var(--ein)}
 .bild.da img,.da .bild img{transform:scale(1.04)}
 .js [data-teller]{transition:transform 1.6s var(--ein);transition-delay:calc(var(--i,0) * 90ms)}
